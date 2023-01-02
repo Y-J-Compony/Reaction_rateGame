@@ -60,6 +60,10 @@ export const Modal = styled.div`
 export const img = styled.img`
   width: 15vw;
   height: auto;
+  @media screen and (max-width: 900px) {
+    width: 30vw;
+    height: auto;
+  }
 `;
 
 export const Title = styled.div`
