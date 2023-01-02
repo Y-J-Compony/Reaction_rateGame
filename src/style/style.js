@@ -30,6 +30,9 @@ export const Computer = styled.div`
 export const Text = styled.div`
   color: white;
   font-size: large;
+  @media screen and (max-width: 900px) {
+    font-size: 13px;
+  }
 `;
 
 export const Timer = styled.div`
@@ -71,4 +74,25 @@ export const Title = styled.div`
   margin-bottom: 10px;
   color: white;
   font-weight: bold;
+  @media screen and (max-width: 900px) {
+    font-size: 1.5rem;
+  }
+`;
+
+export const Box = styled.div``;
+
+export const Name = styled.div`
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+`;
+
+export const Faker = styled.img`
+  width: 40vw;
+  height: auto;
+  @media screen and (max-width: 900px) {
+    width: 40vw;
+    height: auto;
+  }
 `;
