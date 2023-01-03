@@ -96,3 +96,19 @@ export const Faker = styled.img`
     height: auto;
   }
 `;
+
+export const Start = styled.button`
+  border: 4px solid #01a8aa;
+  background-color: #181e23;
+  color: white;
+  font-weight: 900;
+  font-size: large;
+  margin: 20px;
+  width: 15vw;
+  height: 7vh;
+  border-radius: 10px;
+  cursor: pointer;
+  &:active {
+    background-color: gray;
+  }
+`;

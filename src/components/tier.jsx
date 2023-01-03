@@ -1,5 +1,5 @@
 import * as S from "../style/style";
-export default function Tier({ result }) {
+export default function Tier({ result, setTier }) {
   let image;
   if (result >= 1 && result <= 130) {
     image = (
@@ -65,10 +65,15 @@ export default function Tier({ result }) {
       </S.Box>
     );
   }
-
+  const Home = () => {
+    setTier(true);
+  };
   return (
     <>
-      <S.Modal>{image}</S.Modal>
+      <S.Modal>
+        <button onClick={Home}>x</button>
+        {image}
+      </S.Modal>
     </>
   );
 }

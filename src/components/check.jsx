@@ -16,11 +16,11 @@ export default function Check() {
       setState("ready");
       setMessage("색이 변경 되었을 때 Click버튼을 누르세요!");
       setColor("blue");
-
+      setResult("");
       timeout.current = setTimeout(() => {
         setState("now");
         setMessage("클릭");
-        setColor("lightgreen");
+        setColor("green");
         startTime.current = new Date();
       }, Math.floor(Math.random() * 1000) + 3000); // 2초 3초 랜덤
     } else if (state === "ready") {
@@ -30,8 +30,9 @@ export default function Check() {
       setColor("red");
     } else if (state === "now") {
       endTime.current = new Date();
-      setState("waiting ");
-      setMessage("당신의 반응속도입니다.");
+      setState("waiting");
+
+      setMessage("");
       setColor("red");
       setResult(prevResult => {
         return [...prevResult, endTime.current - startTime.current];
@@ -45,8 +46,7 @@ export default function Check() {
       <S.Screen onClick={onClickScreen} style={{ background: `${color}` }}>
         <S.Computer>
           <S.Text>{message}</S.Text>
-          {result.length === 0 ? null : <S.Timer>{result}ms</S.Timer>}
-          {tier ? null : <Tier result={result} />}
+          {tier ? null : <Tier result={result} setTier={setTier} />}
         </S.Computer>
       </S.Screen>
     </S.Bg>
